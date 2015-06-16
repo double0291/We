@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--蓝色按钮-->
+    <style name="ButtonBlue" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/skin_color_button_blue</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/common_btn_blue</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+    <!--红色按钮-->
+    <style name="ButtonRed" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/skin_color_button_red</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/common_btn_red</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+    <!--绿色按钮-->
+    <style name="ButtonGreen" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/skin_color_button_green</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/common_btn_green</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ClearableEditText属性-->
+    <declare-styleable name="clearableEditTextStyle">
+        <attr name="clearBtnDrawable" format="reference" />
+        <attr name="clearBtnDrawableWidth" format="dimension" />
+        <attr name="clearBtnDrawableHeight" format="dimension" />
+    </declare-styleable>
+</resources>
