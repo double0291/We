@@ -1,4 +1,4 @@
-package com.we.widget;
+package com.we.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
