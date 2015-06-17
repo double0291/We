@@ -2,5 +2,10 @@
 <resources>
 
     <string name="app_name">We</string>
+    <!-- tab_bar -->
+    <string name="home_tab_flow">关注</string>
+    <string name="home_tab_find">发现</string>
+    <string name="home_tab_im">消息</string>
+    <string name="home_tab_profile">我</string>
 
 </resources>

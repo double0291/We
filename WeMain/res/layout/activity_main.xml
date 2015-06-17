@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.dreamland.ui.MainActivity">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    <!--加一层蒙板-->
-    <View
+    <FrameLayout
+        android:id="@+id/home_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#9000" />
+        android:background="@color/white" >
+    </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/container"
+    <com.we.ui.widget.TabBar
+        android:id="@+id/tab_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="horizontal" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
 
-</RelativeLayout>
-
+</FrameLayout>

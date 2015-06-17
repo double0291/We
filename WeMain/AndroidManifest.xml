@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -28,28 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.MainActivity"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".ui.ListActivity"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".ui.VideoInfoActivity"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".ui.VideoPlayActivity"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".ui.GameInfoActivity"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name="io.vov.vitamio.activity.InitActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:launchMode="singleTop"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+
     </application>
 
 </manifest>

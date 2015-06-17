@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/main_bottom_bar_height"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/tab_bar_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/tab_bar_divider_main"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <CheckedTextView
+            android:id="@+id/tab_flow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawablePadding="-3dp"
+            android:drawableTop="@drawable/toolbar_flow_selector"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:text="@string/home_tab_flow"
+            android:textColor="@color/home_tab_text_color_selector"
+            android:textSize="11sp" />
+
+        <CheckedTextView
+            android:id="@+id/tab_find"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="-3dp"
+            android:drawableTop="@drawable/toolbar_find_selector"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:text="@string/home_tab_find"
+            android:textColor="@color/home_tab_text_color_selector"
+            android:textSize="11sp" />
+
+        <CheckedTextView
+            android:id="@+id/tab_publish"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/publish_btn_normal"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:textColor="@color/tab_text_h"
+            android:textSize="0sp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <CheckedTextView
+                android:id="@+id/tab_im"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="-3dp"
+                android:drawableTop="@drawable/toolbar_im_selector"
+                android:gravity="center"
+                android:paddingTop="7dp"
+                android:text="@string/home_tab_im"
+                android:textColor="@color/home_tab_text_color_selector"
+                android:textSize="11sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:paddingLeft="30dp" >
+
+                <TextView
+                    android:id="@+id/im_red_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_redpoint"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="99"
+                    android:textColor="@color/white" />
+            </FrameLayout>
+        </RelativeLayout>
+
+        <CheckedTextView
+            android:id="@+id/tab_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="-3dp"
+            android:drawableTop="@drawable/toolbar_profile_selector"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:text="@string/home_tab_profile"
+            android:textColor="@color/home_tab_text_color_selector"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</LinearLayout>
