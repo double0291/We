@@ -24,7 +24,7 @@ import android.widget.ImageView;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader.ImageContainer;
 import com.android.volley.toolbox.ImageLoader.ImageListener;
-import com.dreamland.util.Constants;
+import com.we.util.Constants;
 
 /**
  * Handles fetching an image from a URL as well as the life-cycle of the

@@ -23,7 +23,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 
 import com.android.volley.VolleyLog.MarkerLog;
-import com.dreamland.util.Constants;
+import com.we.util.Constants;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

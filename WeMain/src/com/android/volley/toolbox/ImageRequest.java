@@ -22,7 +22,7 @@ import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyLog;
-import com.dreamland.util.Constants;
+import com.we.util.Constants;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
