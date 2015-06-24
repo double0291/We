@@ -1,30 +1,61 @@
 package com.we.capture;
 
-import com.we.util.Logger;
+import java.io.IOException;
 
 import android.hardware.Camera;
+import android.view.SurfaceHolder;
+
+import com.we.util.Logger;
 
 public class CameraHelper {
 	private Camera mCamera;
 	private int mCameraId;
+	private boolean mHasInit;
 
 	public Camera getCamera() {
 		return mCamera;
 	}
 
+	public boolean init(SurfaceHolder holder) {
+		return init(Camera.CameraInfo.CAMERA_FACING_BACK, holder);
+	}
+
 	/**
-	 * @param {@link Camera.CameraInfo#CAMERA_FACING_FRONT}
-	 *        {@link Camera.CameraInfo#CAMERA_FACING_BACK}
+	 * @param {@link Camera.CameraInfo#CAMERA_FACING_FRONT} {@link Camera.CameraInfo#CAMERA_FACING_BACK}
 	 */
-	public boolean init(int cameraType) {
-		return open(getCameraId(cameraType));
+	public boolean init(int cameraType, SurfaceHolder holder) {
+		if (mHasInit)
+			return false;
+
+		if (!open(getCameraId(cameraType)))
+			return false;
+
+		mCamera.setDisplayOrientation(90);
+
+		try {
+			mCamera.setPreviewDisplay(holder);
+		} catch (IOException e) {
+			Logger.e("Error setting camera preview: " + e.getMessage(), false);
+			return false;
+		}
+
+		mCamera.startPreview();
+
+		mHasInit = true;
+
+		return true;
 	}
 
 	public void releaseCamera() {
 		if (mCamera != null) {
 			mCamera.stopPreview();
 			mCamera.release();
+			mHasInit = false;
 		}
+	}
+
+	public boolean isOpen() {
+		return mCamera != null && mHasInit;
 	}
 
 	private boolean open(int cameraId) {

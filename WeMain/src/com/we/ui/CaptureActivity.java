@@ -1,17 +1,17 @@
 package com.we.ui;
 
-import android.hardware.Camera;
 import android.os.Bundle;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.Window;
-import android.widget.FrameLayout;
 
 import com.we.R;
 import com.we.base.BaseActivity;
 import com.we.capture.CameraHelper;
 
-public class CaptureActivity extends BaseActivity {
+public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callback {
+	private SurfaceView mSurfaceView;
 	private CameraHelper mCameraHelper;
-	private CameraPreview mCameraPreview;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,26 +19,38 @@ public class CaptureActivity extends BaseActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_photo_take);
 
-		initData();
 		initView();
+		initData();
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		mCameraHelper.releaseCamera();
+		mSurfaceView.getHolder().removeCallback(this);
+	}
+
+	@Override
+	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+
+	}
+
+	@Override
+	public void surfaceCreated(SurfaceHolder holder) {
+		mCameraHelper.init(holder);
+	}
+
+	@Override
+	public void surfaceDestroyed(SurfaceHolder holder) {
+		if (mCameraHelper.isOpen())
+			mCameraHelper.releaseCamera();
 	}
 
 	private void initData() {
 		mCameraHelper = new CameraHelper();
-		mCameraHelper.init(Camera.CameraInfo.CAMERA_FACING_BACK);
+		mSurfaceView.getHolder().addCallback(this);
 	}
 
 	private void initView() {
-		Camera camera = mCameraHelper.getCamera();
-		// Create our Preview view and set it as the content of our activity.
-		mCameraPreview = new CameraPreview(this, camera);
-		FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
-		preview.addView(mCameraPreview);
+		mSurfaceView = (SurfaceView) findViewById(R.id.preview);
 	}
 }

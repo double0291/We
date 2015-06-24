@@ -3,10 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <FrameLayout
-        android:id="@+id/camera_preview"
+    <SurfaceView
+        android:id="@+id/preview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:gravity="center_vertical" >
+
+        <ImageButton
+            android:id="@+id/flash_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:padding="17dp"
+            android:src="@drawable/publish_capture_flash_off" />
+
+        <ImageButton
+            android:id="@+id/switch_camera_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:padding="22dp"
+            android:src="@drawable/publish_capture_switch" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/close_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@null"
+        android:padding="22dp"
+        android:paddingLeft="17dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/close_btn" />
 
     <ImageButton
         android:id="@+id/capture_btn"
@@ -18,5 +58,15 @@
         android:background="@null"
         android:padding="22dp"
         android:src="@drawable/publish_capture" />
+
+    <ImageButton
+        android:id="@+id/gallery_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:padding="22dp"
+        android:src="@drawable/publish_capture_gallery" />
 
 </RelativeLayout>
