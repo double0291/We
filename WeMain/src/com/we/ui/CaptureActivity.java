@@ -46,7 +46,7 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
 	}
 
 	private void initData() {
-		mCameraHelper = new CameraHelper();
+		mCameraHelper = new CameraHelper(this);
 		mSurfaceView.getHolder().addCallback(this);
 	}
 
