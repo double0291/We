@@ -1,5 +1,6 @@
 package com.we.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -33,6 +34,13 @@ public class MainActivity extends BaseActivity implements TabBar.OnTabClickListe
 
 	@Override
 	public void onTabChange(int tabId) {
+		// 点击拍摄
+		if (tabId == TabBar.TAB_PUBLISH) {
+			startActivity(new Intent(MainActivity.this, CaptureActivity.class));
+			overridePendingTransition(0, 0);
+			return;
+		}
+
 		Fragment fragment = null;
 
 		switch (tabId) {
@@ -41,8 +49,6 @@ public class MainActivity extends BaseActivity implements TabBar.OnTabClickListe
 			break;
 		case TabBar.TAB_FIND:
 			fragment = new MainTabFindFragment();
-			break;
-		case TabBar.TAB_PUBLISH:
 			break;
 		case TabBar.TAB_IM:
 			fragment = new MainTabIMFragment();
